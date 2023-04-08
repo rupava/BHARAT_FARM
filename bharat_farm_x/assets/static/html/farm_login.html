@@ -1,9 +1,18 @@
-{% extends 'cover/cover_blank.html' %}
+{% extends 'html/cover/cover_blank.html' %}
 {%load static%}
 {% block cover_blank %}
 <!-- COVER FINANCE HERE -->
-<section class="py-5 bg-light shadow-custom">
-    <div class="container mt-3">
+
+<!-- DNT -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="{% static 'css/main.css'%}" />
+<link rel="stylesheet" href="{% static 'css/animate.css'%}" />
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" />
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
+<link rel="stylesheet" href="{% static 'css/owl.theme.green.min.css'%}" />
+<!-- DMT -->
+<section class="py-5 bg-light shadow-custom mt-5">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-5">
                 <div class="card-body Signup-shadow">
@@ -30,9 +39,9 @@
     </div>
 </section>
 <!--owl carousel -->
-<script src="./assests/js/owl.carousel.min.js"></script>
-<script src="./assests/js/popper.min.js"></script>
-<script src="./assests/js/main.js"></script>
-<script src="./assests/js/test.js"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/test.js' %}"></script>
 <!--end of owl carousel -->
 {% endblock %}
