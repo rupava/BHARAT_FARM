@@ -1,0 +1,38 @@
+{% extends 'cover/cover_blank.html' %}
+{%load static%}
+{% block cover_blank %}
+<!-- COVER FINANCE HERE -->
+<section class="py-5 bg-light shadow-custom">
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-5">
+                <div class="card-body Signup-shadow">
+                    <h2 class="pt-3 pb-5">Login</h2>
+                    <form action="" class="">
+                        <div class="d-flex key">
+                            <i class="fa fa-envelope fa-signup text-dark align-self-center mx-3"></i>
+                            <input type="email" name="" id="" class="form-control" placeholder="Email" required />
+                        </div>
+                        <div class="d-flex key">
+                            <i class="fa fa-lock fa-signup text-dark align-self-center mx-3"></i>
+                            <input type="password" name="" id="" class="form-control" placeholder="**********"
+                                required />
+                        </div>
+                        <input type="submit" value="Submit" class="btn btn-success px-5" />
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="#" class="text-success">Forgot password</a>
+                            <a href="signup.html" class="text-success">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--owl carousel -->
+<script src="./assests/js/owl.carousel.min.js"></script>
+<script src="./assests/js/popper.min.js"></script>
+<script src="./assests/js/main.js"></script>
+<script src="./assests/js/test.js"></script>
+<!--end of owl carousel -->
+{% endblock %}

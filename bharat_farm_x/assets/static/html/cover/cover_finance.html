@@ -2,6 +2,296 @@
 {%load static%}
 {% block cover_blank %}
 <!-- COVER FINANCE HERE -->
-    <h1>FINANCE HERE</h1>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+
+    .card:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .card a {
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.1em;
+    }
+
+    .card a:hover {
+        text-decoration: underline;
+    }
+
+    .card p {
+        font-size: 0.9em;
+        margin-top: 10px;
+        line-height: 1.5;
+        height: 80px;
+        overflow: hidden;
+        color: #333;
+    }
+
+    .card a[href^="http"]:not([href*="chatgpt.com"])::after {
+        content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/External-link-symbol.svg/1200px-External-link-symbol.svg.png');
+        margin-left: 5px;
+        height: 12px;
+    }
+
+    .filter {
+        margin-bottom: 20px;
+    }
+
+    .filter label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .filter select {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+<script>
+    function filterCards(filter) {
+        let cards = document.querySelectorAll('.card');
+        for (let i = 0; i < cards.length; i++) {
+            if (filter === 'all') {
+                cards[i].style.display = 'block';
+            } else if (cards[i].classList.contains(filter)) {
+                cards[i].style.display = 'block';
+            } else {
+                cards[i].style.display = 'none';
+            }
+        }
+        let filterButtons = document.querySelectorAll('.filter-options button');
+        for (let i = 0; i < filterButtons.length; i++) {
+            if (filterButtons[i].classList.contains('active')) {
+                filterButtons[i].classList.remove('active');
+            }
+        }
+        document.querySelector(`button[data-filter="${filter}"]`).classList.add('active');
+    }
+</script>
+<section class="py-5 bg-light shadow-custom">
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="container">
+                <div class="filter-options m-3">
+                    <button class="active btn" onclick="filterCards('all')">All</button>
+                    <button class="btn" onclick="filterCards('private')">Private</button>
+                    <button class="btn" onclick="filterCards('government')">Government</button>
+                </div>
+                <div class="card-container, grid">
+                    <div class="card government">
+                        <img src="https://www.ncdc.in/images/NCDCNewlogo.png"
+                            alt="National Cooperative Development Corporation">
+                        <a href="https://www.ncdc.in/" target="_blank">National Cooperative Development
+                            Corporation</a>
+                        <p>A statutory corporation under the Ministry of Agriculture and Farmers Welfare, offering
+                            financial assistance to cooperatives, farmers, and rural entrepreneurs.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/REC_logo.svg/375px-REC_logo.svg.png"
+                            alt="Rural Electrification Corporation Limited">
+                        <a href="https://www.recindia.nic.in/" target="_blank">Rural Electrification Corporation
+                            Limited</a>
+                        <p>A Navratna company under the Ministry of Power, financing and promoting rural
+                            electrification
+                            projects, and providing assistance to farmers for irrigation and other agricultural
+                            activities.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://scontent.fbom19-3.fna.fbcdn.net/v/t39.30808-6/277758052_373830104754632_8139252677945607684_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aNobr2BXKhIAX8NK6cr&_nc_ht=scontent.fbom19-3.fna&oh=00_AfBNGPykK-kEzIgyHUYAsc7_8JwJJA9eXrTNz0-L4GkfbQ&oe=6436CB15"
+                            alt="Small Farmers Agribusiness Consortium">
+                        <a href="http://sfacindia.com/" target="_blank">Small Farmers Agribusiness Consortium</a>
+                        <p>A society under the Ministry of Agriculture and Farmers Welfare, working towards
+                            enhancing
+                            the competitiveness of small farmers and promoting agribusiness.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.nafed-india.com/sites/default/files/Nafed%20Logo.jpg"
+                            alt="National Agricultural Cooperative Marketing Federation of India Ltd.">
+                        <a href="https://www.nafed-india.com/" target="_blank">National Agricultural Cooperative
+                            Marketing Federation of
+                            India Ltd.</a>
+                        <p>A cooperative marketing organization under the Ministry of Agriculture and Farmers
+                            Welfare,
+                            working towards ensuring remunerative prices to farmers for their produce by providing
+                            them
+                            with marketing support and undertaking procurement and distribution activities.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.nhb.gov.in/assets/img/NHBLOGO.png" alt="National Horticulture Board">
+                        <a href="https://www.nhb.gov.in/" target="_blank">National Horticulture Board</a>
+                        <p>An autonomous body under the Ministry of Agriculture and Farmers Welfare, promoting
+                            integrated development of horticulture and providing financial assistance to
+                            horticulture-related projects.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.nabard.org/images/logo.png"
+                            alt="National Bank for Agriculture and Rural Development">
+                        <a href="https://www.nabard.org/" target="_blank">National Bank for Agriculture and Rural
+                            Development</a>
+                        <p>A development finance institution under the Ministry of Finance, promoting agriculture
+                            and
+                            rural development by providing credit, technical assistance, and other support services
+                            to
+                            farmers and rural entrepreneurs.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.nbfgr.res.in/images/logo.png"
+                            alt="National Bureau of Fish Genetic Resources">
+                        <a href="https://www.nbfgr.res.in/" target="_blank">National Bureau of Fish Genetic
+                            Resources</a>
+                        <p>An autonomous institute under the Indian Council of Agricultural Research, working
+                            towards
+                            conservation, characterisation, and utilisation of fish genetic resources in the
+                            country.
+                        </p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.nicd.ac.za/wp-content/uploads/2019/06/cropped-NICD-LogoHR_page-0001.jpg"
+                            alt="National Institute of Cooperative Development">
+                        <a href="https://www.nicd.ac.za/" target="_blank">National Institute of Cooperative
+                            Development</a>
+                        <p>An autonomous institute under the Ministry of Agriculture and Farmers Welfare, providing
+                            training, research, and consultancy services to cooperatives and other stakeholders in
+                            the
+                            cooperative sector.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Reserve_Bank_of_India_logo.svg/732px-Reserve_Bank_of_India_logo.svg.png?20220727071531"
+                            alt="Reserve Bank of India">
+                        <a href="https://www.rbi.org.in/" target="_blank">Reserve Bank of India</a>
+                        <p>The central bank of the country, regulating and supervising the financial system, and
+                            providing credit and other support services to farmers and rural entrepreneurs through
+                            its
+                            various schemes and programmes.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.sidbi.in/assets/images/logo.png" style="background-color: #333;"
+                            alt="Small Industries Development Bank of India">
+                        <a href="https://www.sidbi.in/" target="_blank">Small Industries Development Bank of
+                            India</a>
+                        <p>A development finance institution under the Ministry of Finance, promoting and financing
+                            small-scale industries and businesses, including those in the agriculture and rural
+                            sectors.
+                        </p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://www.skymetweather.com/themes/skymet/images/logo.png"
+                            alt="Skymet Weather Services Pvt. Ltd.">
+                        <a href="https://www.skymetweather.com/" target="_blank">Skymet Weather Services Pvt.
+                            Ltd.</a>
+                        <p>A private weather forecasting company, providing weather-related information and services
+                            to
+                            farmers and other stakeholders in the agriculture and rural sectors.</p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://trifed.in/wp-content/uploads/2022/03/cropped-cropped-cropped-trifed-logo.png"
+                            alt="Tribal Cooperative Marketing Development Federation of India">
+                        <a href="https://www.trifed.in/" target="_blank">Tribal Cooperative Marketing
+                            DevelopmentFederation of India</a>
+                        <p>An apex organization under the Ministry of Tribal Affairs, working towards the
+                            socio-economic
+                            development of tribal communities by promoting and marketing their tribal art and craft
+                            products.</p>
+                    </div>
+
+                    <div class="card government">
+                        <img src="http://upagriculture.com/img/logo22.png"
+                            alt="Uttar Pradesh State Agricultural Marketing Board">
+                        <a href="http://upagriculture.com/" target="_blank">Uttar Pradesh State Agricultural
+                            Marketing Board</a>
+                        <p>The state agency responsible for regulating and promoting agricultural marketing in Uttar
+                            Pradesh, providing market infrastructure, facilities, and services to farmers and
+                            traders.
+                        </p>
+                    </div>
+                    <div class="card government">
+                        <img src="https://indiavisionfoundation.org/wp-content/uploads/2022/06/ivf_logo-2048x1031.png"
+                            alt="Vision India Foundation">
+                        <a href="https://indiavisionfoundation.org/" target="_blank">Vision India Foundation</a>
+                        <p>A non-profit organization working towards the socio-economic development of the country
+                            through various initiatives, including those in the agriculture and rural sectors.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://www.yesbank.in/content/published/api/v1.1/assets/CONT7393C315034D4980BD57926E0DAC486C/native/logo.png?channelToken=21f7ccfa2fc3401091938f541a6f8f2a"
+                            alt="Yes Bank">
+                        <a href="https://www.yesbank.in/" target="_blank">Yes Bank</a>
+                        <p>A private sector bank providing banking and financial services to farmers and rural
+                            entrepreneurs through its various schemes and programmes.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://shared.bayer.com/img/cs/logo.svg" alt="Bayer Crop Science">
+                        <a href="https://www.cropscience.bayer.in/">Bayer Crop Science</a>
+                        <p>Provides innovative solutions for sustainable agriculture through crop protection, seeds,
+                            and digital farming.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://global-uploads.webflow.com/591b46f1eacfad0f37b73b0f/5eb39f388cf2c62f12119527_capitalvia-logo.svg"
+                            alt="CapitalVia Global Research Limited">
+                        <a href="https://www.capitalvia.com/" target="_blank">CapitalVia Global Research Limited</a>
+                        <p>Offers personalized investment advisory services to farmers for better returns.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://www.iifl.com/themes/custom/iifl_finance/logo.svg" alt="IIFL Finance">
+                        <a href="https://www.iifl.com/" target="_blank">IIFL Finance</a>
+                        <p>Offers affordable loans for farmers to buy land, machinery, and other farming inputs.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://www.mahindrafinance.com/media/394064/small-logo-png.png"
+                            alt="Mahindra Finance">
+                        <a href="https://www.mahindrafinance.com/" target="_blank">Mahindra Finance</a>
+                        <p>Provides financial services to farmers and rural customers, including vehicle financing
+                            and insurance.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="http://www.ncml.com/wp-content/uploads/2021/01/NCML-with-Tagline-Logo-1.png"
+                            alt="National Collateral Management Services Limited">
+                        <a href="https://www.ncml.com/" target="_blank">National Collateral Management Services
+                            Limited</a>
+                        <p>Offers collateral management services to farmers and traders for better price
+                            realization.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://www.olamgroup.com/content/dam/olamgroup/xd/olam-logo-new.png" alt="Olam Agro">
+                        <a href="https://www.olamgroup.com/" target="_blank">Olam Agro</a>
+                        <p>Provides end-to-end supply chain solutions for farmers and processors, including
+                            sourcing, processing, and distribution.</p>
+                    </div>
+                    <div class="card private">
+                        <img src="https://stage-cdn.pchf.in/pchfweb/assets/images/icons/piramal-logo.svg"
+                            alt="Piramal Capital & Housing Finance">
+                        <a href="https://www.piramalfinance.com/" target="_blank">Piramal Capital & Housing
+                            Finance</a>
+                        <p>Offers flexible and innovative financing solutions to farmers for agriculture and allied
+                            activities.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>
 <!-- COVER FINANCE END -->
 {% endblock %}
