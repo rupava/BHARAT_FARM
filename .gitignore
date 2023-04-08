@@ -1,0 +1,9 @@
+# Django related files
+*.pyc
+*.pyo
+*.pyd
+*.py~
+**/__pycache__/
+*.pyc
+*.egg-info/
+bharat_farm_x_venv
