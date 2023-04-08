@@ -1,7 +1,94 @@
 {% extends 'html/cover/cover_blank.html' %}
 {%load static%}
 {% block cover_blank %}
-<!-- COVER INDEX HERE -->
-    <h1>COVER HERE</h1>
-<!-- COVER INDEX END -->
+<div class="home-color">
+    <section id="home" class="home">
+        <div class="home-row">
+            <div class="home-content">
+                <h1 data-aos="fade-up">
+                    Unlock the full potential of farm market with BharatFarmX
+                </h1>
+                <h2 data-aos="fade-up" data-aos-delay="400"> - Let BharatFarmX provide you with cutting-edge
+                    platform
+                    for farmers purpose.</h2>
+                <div data-aos="fade-up" data-aos-delay="600" class="form-connect">
+                    <a href="login.html" class="lets-connect scrollto">
+                        <span>Lets Start</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="side-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src=".{% static 'images/home-img.png' %}" class="home-img" loading="lazy" alt="Home image">
+                <!-- Image by <a href="https://www.freepik.com/free-vector/organic-farming-with-man-field_6721205.htm#query=agriculture&position=26&from_view=search&track=sph">Freepik</a> -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="services" data-aos="fade-up">
+    <header class="section-header">
+        <h2>Services</h2>
+        <p>We provide distinct services to our valued customers.</p>
+    </header>
+
+    <div class="services-row">
+
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <div class="box">
+                <div class="content">
+                    <img src="{% static 'images/values-1.jpg' %}" class="img-fluid" alt="">
+                    <!-- <a href="https://www.freepik.com/free-photo/front-view-vegetable_15718656.htm#query=farm%20produce&position=30&from_view=search&track=ais">Image by KamranAydinov</a> on Freepik -->
+                    <h3>Sell Farm Produce</h3>
+                    <p>We are building an farmer friendly platform where farmers can get fair prices for there farm
+                        produce.</p>
+                        <button>Know more</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+            <div class="box">
+                <div class="content">
+                    <img src="{% static 'images/values-2.jpg' %}" class="img-fluid" alt="">
+                    <h3>Fertilizers/Seeds</h3>
+                    <p>We provide with fertilizers and seeds at a cheaper price than usual markets with an
+                        customized suggestion as per location.</p>
+                        <button>Know more</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="450">
+            <div class="box">
+                <div class="content">
+                    <img src="{% static 'images/values-3.jpg' %}" class="img-fluid" alt="">
+                    <h3>Farm Equipments</h3>
+                    <p>We provide a platform to buy and sell farm equipments or take it on rent as per the demand.
+                    </p>
+                    <button>Know more</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card last-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+                <div class="content">
+                    <img src="{% static 'images/values-4.png' %}" class="img-fluid" alt="">
+                    <h3>Financial Help</h3>
+                    <p>We provide an seamless way to connect the farmers with financial institutes to help them by
+                        providing finances.</p>
+                        <button>Know more</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Services Section -->
 {% endblock %}
