@@ -3,72 +3,85 @@
 {% block body %}
 <!-- NAV HERE -->
 <!-- NAV -->
-<nav>
-    <input id="nav-toggle" type="checkbox" />
-    <div class="logo-wrapper">
-        <a target="_self">
-            <img src="{% static 'images/logos/logo.png' %}" alt="logo" class="Bharatfarmx-logo" />
-        </a>
-    </div>
+<header id="header" class="header">
+    <div class="header-container">
 
-    <ul class="links">
-        <li><a href="#">Home </a></li>
-        <li><a href="#">services</a></li>
-        <li><a href="#">login</a></li>
-    </ul>
-    <label for="nav-toggle" class="icon-burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </label>
-</nav>
+        <a href="index.html" class="logo">
+            <img src="{% static 'images/logos/logo.png' %}" alt="">
+            <span>BharatFarmX</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#home">Home</a></li>
+                <li><a class="nav-link scrollto" href="login.html">Farmer Login</a></li>
+                <li><a class="nav-link scrollto" href="#">Services<i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+            </ul>
+            <i class="fa-solid fa-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
 <!-- NAV END -->
 {% block cover_blank %}
 {% endblock %}
 <!-- FOOTER HERE -->
-<footer>
-    <div class="content">
-        <div class="left box">
-            <div class="upper">
-                <div class="topic">About us</div>
-                <p>CodingLab is a channel where you can learn HTML,
-                    CSS, and also JavaScript along with creative CSS Animations and Effects.</p>
+<footer id="footer" class="footer">
+    <div class="footer-top">
+        <div class="footer-container">
+            <div class="footer-row">
+
+                <div class="footer-info">
+                    <a href="index.html" class="logo">
+                        <img src="{% static 'images/logos/logo.png' %}" alt="Footer logo">
+                        <span>BharatFarmX</span>
+                    </a>
+                    <p>BharatFarmX is a innovative solutions, dedicated towards provding farmers direct access towards
+                        the market
+                        or modern businesses, we strive to provide services that
+                        make a positive impact.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" target="_blank" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><strong>Phone:</strong>+919999999999<br></li>
+                        <li><strong>Email:</strong>BharatFarmX@gmail.com</li>
+                    </ul>
+                </div>
             </div>
-            <div class="lower">
-                <div class="topic">Contact us</div>
-                <div class="phone">
-                    <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
-                </div>
-                <div class="email">
-                    <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
-                </div>
-            </div>
-        </div>
-        <div class="middle box">
-            <div class="topic">Our Services</div>
-            <div><a href="#">Financial help</a></div>
-            <div><a href="#">Financial help</a></div>
-            <div><a href="#">Financial help</a></div>
-            <div><a href="#">Financial help</a></div>
-            <div><a href="#">Financial help</a></div>
-            <div><a href="#">Financial help</a></div>
-        </div>
-        <div class="right box">
-            <div class="topic">Subscribe us</div>
-            <form action="#">
-                <input type="text" placeholder="Enter email address">
-                <input type="submit" name="" value="Send">
-                <div class="media-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </form>
         </div>
     </div>
-    <div class="bottom">
+
+    <div class="copyright-container">
+        <div class="copyright"><i class="fa-regular fa-copyright"></i> Copyright
+            <strong><span>BharatFarmX</span></strong>.
+            All Rights Reserved
+        </div>
+    </div>
     </div>
 </footer>
 <!-- FOOTER END -->
