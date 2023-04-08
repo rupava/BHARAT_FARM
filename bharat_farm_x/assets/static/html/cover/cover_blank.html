@@ -6,16 +6,16 @@
 <header id="header" class="header">
     <div class="header-container">
 
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
             <img src="{% static 'images/logos/logo.png' %}" alt="">
             <span>BharatFarmX</span>
         </a>
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="#home">Home</a></li>
+                <li><a class="nav-link scrollto" href="/">Home</a></li>
                 <li><a class="nav-link scrollto"
-                        href="/BHARAT_FARM/bharat_farm_x/assets/static/html/farm_login.html">Farmer Login</a></li>
+                        href="{% url 'login' %}">Farmer Login</a></li>
                 <li><a class="nav-link scrollto" href="#">Services<i class="fa-solid fa-chevron-down"></i></a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
             </ul>
@@ -52,7 +52,7 @@
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="#about">About us</a></li>
                         <li><a href="#services">Services</a></li>
                     </ul>
