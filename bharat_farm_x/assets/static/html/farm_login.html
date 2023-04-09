@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" />
 <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
 <link rel="stylesheet" href="{% static 'css/owl.theme.green.min.css'%}" />
+
+{% if user.is_authenticated%}
+<script>
+    // window.location.href = "{% url 'portal'%}";
+</script>
+{% endif %}
+
+
 <!-- DMT -->
 <section class="py-5 bg-light shadow-custom mt-5">
     <div class="container mt-5">
